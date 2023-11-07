@@ -66,8 +66,8 @@
     		<type>pom</type>
 		</dependency>
 
-	</dependencies>
 
+	</dependencies>
 	<build>
 		<plugins>
 			<plugin>
