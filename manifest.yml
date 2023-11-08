@@ -1,10 +1,12 @@
+---
 applications:
   - name: sample
     memory: 1G
     instances: 1
-    path: target/sample-0.0.1-SNAPSHOT.jar
+    path: target/sample-0.0.1-SNAPSHOT.war
     buildpacks:
-      - java_buildpack
+      - sap_java_buildpack
     env:
-      JBP_CONFIG_OPEN_JDK_JRE: "{ jre: { version: 17.+ }}"
-      JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: "{enabled: false}"
+      SPRING_PROFILES_DEFAULT: cf
+      TENANT_HOST_PATTERN: leaveapplication- (.*). cfapps.us10-001.hana.ondemand.com
+      USE_CONNECTIVITY_APIEXT: trues
