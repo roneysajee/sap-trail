@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.roney.sample.entity.CustomerOrder;
 import com.roney.sample.entity.SiteUser;
 
-@RestController
+@RestController("/")
 public class TestController {
 	private UserRepository userRepo;
 	private OrderRepository orderRepo;
@@ -22,7 +22,7 @@ public class TestController {
 		this.orderRepo = order;
 	}
 	
-	@PostMapping("/users/add")
+	@PostMapping("users/add")
 	public SiteUser createUser(@RequestBody SiteUser user) {
 		
 		 return userRepo.save(user);
